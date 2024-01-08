@@ -31,6 +31,24 @@ class Tree_node:
             if found:
                 return True
         return False
+    
+    def height(self) :
+        if len(self.children) == 0 :
+            return 0
+        max_height = -1
+        for child in self.children :
+            max_height = max(max_height, child.height())
+        return max_height + 1
+
+    def isBinary(self) :
+        if len(self.children) > 2 :
+            return False
+        if len(self.children) == 0 :
+            return True
+        for child in self.children :
+            if not child.isBinary() :
+                return False
+        return True
 
 def create_tree():
     root = Tree_node("Electronics")
