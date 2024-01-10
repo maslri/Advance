@@ -1,3 +1,5 @@
+# mypy {name file python}
+
 x: int = 2
 y: float = 4.4
 z: bool = True
